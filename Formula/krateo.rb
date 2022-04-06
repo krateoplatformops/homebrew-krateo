@@ -5,23 +5,31 @@
 class Krateo < Formula
   desc "Cross OS commandline tool to manage Krateo Platform."
   homepage "https://github.com/krateoplatformops/homebrew-krateo"
-  version "0.4.12"
+  version "0.5.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v0.4.12/krateo_0.4.12_darwin_amd64.tar.gz"
-      sha256 "bf0ba5ab2a073d9999ec95038919f0f165d7259c4d4f4e0cb582c817480113fe"
+    url "https://github.com/krateoplatformops/krateo/releases/download/v0.5.0/krateo_0.5.0_darwin_amd64.tar.gz"
+    sha256 "5962c8ca424ba251880b109293ebc2bfb258d5dbf0e089ba7db959a8c621f28b"
 
-      def install
-        bin.install "krateo"
+    def install
+      bin.install "krateo"
+    end
+
+    if Hardware::CPU.arm?
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the Krateo
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v0.4.12/krateo_0.4.12_linux_amd64.tar.gz"
-      sha256 "92248778032569b935a76958a195b12e758b27f8e14994738682da15523266d5"
+      url "https://github.com/krateoplatformops/krateo/releases/download/v0.5.0/krateo_0.5.0_linux_amd64.tar.gz"
+      sha256 "c929de62f3e346f5ace3bf1cc4b5608c6d66119995dfd150487975c50f842a48"
 
       def install
         bin.install "krateo"
