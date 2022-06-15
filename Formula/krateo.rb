@@ -5,11 +5,11 @@
 class Krateo < Formula
   desc "Cross OS commandline tool to manage Krateo Platform."
   homepage "https://github.com/krateoplatformops/homebrew-krateo"
-  version "0.6.0"
+  version "0.6.1"
 
   on_macos do
-    url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.0/krateo_0.6.0_darwin_amd64.tar.gz"
-    sha256 "7ded34a856a5ed708b7d08c59792ee513ca47c18e72b4a90445b4d10dbebf357"
+    url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.1/krateo_0.6.1_darwin_amd64.tar.gz"
+    sha256 "eb5029309824db86f0aac53583680b5ceea8ae0d98381b0db3fdbbf566c88140"
 
     def install
       bin.install "krateo"
@@ -28,8 +28,8 @@ class Krateo < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.0/krateo_0.6.0_linux_amd64.tar.gz"
-      sha256 "4cd13125655f6d757fa828461c57eb6a2d361bb4d4c4350348e0efc657a8b9e4"
+      url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.1/krateo_0.6.1_linux_amd64.tar.gz"
+      sha256 "ae96757104cd5e265c43ca843360188a4126551ce98c7d26ba7eb12c5ab8e1b1"
 
       def install
         bin.install "krateo"
