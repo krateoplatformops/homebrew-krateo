@@ -5,31 +5,39 @@
 class Krateo < Formula
   desc "Cross OS commandline tool to manage Krateo Platform."
   homepage "https://github.com/krateoplatformops/homebrew-krateo"
-  version "0.6.2"
+  version "0.6.3"
 
   on_macos do
-    url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.2/krateo_0.6.2_darwin_amd64.tar.gz"
-    sha256 "c87cce48f17123f8e7892711ab93cfbedcb66db9b17d10b3792413cf64ad3688"
-
-    def install
-      bin.install "krateo"
-    end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Krateo
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.3/krateo_0.6.3_darwin_arm64.tar.gz"
+      sha256 "ef614f717ac287f564f882a1db012a885d2d65802873d4b91d08f27a08a3a608"
+
+      def install
+        bin.install "krateo"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.3/krateo_0.6.3_darwin_amd64.tar.gz"
+      sha256 "18cfb93008030df583444c1089ef25a6a4b056ce8183690a97ccbe2fd88434ff"
+
+      def install
+        bin.install "krateo"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.2/krateo_0.6.2_linux_amd64.tar.gz"
-      sha256 "8a8af97924c9616d1c0a242cee6f13ca76b5a31eb8c6b677e456af7f5b371796"
+      url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.3/krateo_0.6.3_linux_amd64.tar.gz"
+      sha256 "9f81242367ad0bd221e27aa84bd46da1e439aad2897b5fe0c2d40bdb4a27e74a"
+
+      def install
+        bin.install "krateo"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/krateoplatformops/krateo/releases/download/v0.6.3/krateo_0.6.3_linux_arm64.tar.gz"
+      sha256 "cb70ae6f22e92eb4dc29f21c02d6295060958643040d3fad2bd778af4f876244"
 
       def install
         bin.install "krateo"
