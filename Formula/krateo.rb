@@ -5,20 +5,20 @@
 class Krateo < Formula
   desc "Cross OS commandline tool to manage Krateo Platform."
   homepage "https://github.com/krateoplatformops/homebrew-krateo"
-  version "1.2.0"
+  version "1.3.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v1.2.0/krateo_1.2.0_darwin_arm64.tar.gz"
-      sha256 "3d344f75a36cb298bc10df866c8d181d1596e9048a18e18e1a9e0fd86e2c17af"
+      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.0/krateo_1.3.0_darwin_arm64.tar.gz"
+      sha256 "df0e7cc4fe57aef2d33a917bdb736ac17379deb9be1507f07dd35ebccf61a5dc"
 
       def install
         bin.install "krateo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v1.2.0/krateo_1.2.0_darwin_amd64.tar.gz"
-      sha256 "aa7ae2fa994cbe0fe7cf28cce02100c629ef14c0e32058cc653fcc863afbc87a"
+      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.0/krateo_1.3.0_darwin_amd64.tar.gz"
+      sha256 "d8bd907f4ba19b5bff5dca5a8050c4356a04c144beb973bdf8dc51318586f9cc"
 
       def install
         bin.install "krateo"
@@ -27,17 +27,17 @@ class Krateo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v1.2.0/krateo_1.2.0_linux_amd64.tar.gz"
-      sha256 "6ed15ca82146434f47004cd5aa1a5d561b65f2fa94f1091e155ac229f53433d0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.0/krateo_1.3.0_linux_arm64.tar.gz"
+      sha256 "54aed4e45e5a0f80f1375c083a5f6ea5f722dd553b8cb2c1def2fc483cadd724"
 
       def install
         bin.install "krateo"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v1.2.0/krateo_1.2.0_linux_arm64.tar.gz"
-      sha256 "a205018d59d722e85c05b9ea1eb118eab49cab8692d04308478a60c8d15fbb9e"
+    if Hardware::CPU.intel?
+      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.0/krateo_1.3.0_linux_amd64.tar.gz"
+      sha256 "4890b09606be70841e7c94fc0094e3240ca18d55a22511e6c572216b8acb851a"
 
       def install
         bin.install "krateo"
