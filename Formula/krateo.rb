@@ -5,20 +5,20 @@
 class Krateo < Formula
   desc "Cross OS commandline tool to manage Krateo Platform."
   homepage "https://github.com/krateoplatformops/homebrew-krateo"
-  version "1.3.1"
+  version "1.3.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.1/krateo_1.3.1_darwin_arm64.tar.gz"
-      sha256 "1833e97d5146e98674b258172acd3be9df91db556e31774a157e1d7a7ce6e200"
+      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.2/krateo_1.3.2_darwin_arm64.tar.gz"
+      sha256 "67ddefdc82fa91c6f39292219eb012ff90daa5ffc3c970b5185dec1aaa983616"
 
       def install
         bin.install "krateo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.1/krateo_1.3.1_darwin_amd64.tar.gz"
-      sha256 "ab0e7a52ab07ad4b5543f5864501200d3739c61c875100b88bde334cb1d4d351"
+      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.2/krateo_1.3.2_darwin_amd64.tar.gz"
+      sha256 "accbafde4a581e353f3560c1f660f21ee11287149b96118f4256e49ccf65b8c5"
 
       def install
         bin.install "krateo"
@@ -28,16 +28,16 @@ class Krateo < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.1/krateo_1.3.1_linux_amd64.tar.gz"
-      sha256 "9241f8fb22c633a0b02945c941ee40aa939bc8045c2586087a251940a3109834"
+      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.2/krateo_1.3.2_linux_amd64.tar.gz"
+      sha256 "a28bc0452df229ebf6b5058b9cb4d42ff92287dbe74db6d99e295bebb7bcb8f4"
 
       def install
         bin.install "krateo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.1/krateo_1.3.1_linux_arm64.tar.gz"
-      sha256 "cfce40eb58092035df7b25bcaf0554466dd35843bf41918c7c4c4310c3a88c65"
+      url "https://github.com/krateoplatformops/krateo/releases/download/v1.3.2/krateo_1.3.2_linux_arm64.tar.gz"
+      sha256 "095da2931649e9e919cb66b71ee78ee890b427236f627852615e3f4e75cdf06c"
 
       def install
         bin.install "krateo"
